@@ -1,7 +1,9 @@
 package scenarios.stepDefinitions;
 
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Properties;
 import org.openqa.selenium.By;
-
 import context.TestContext;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.And;
@@ -18,9 +20,14 @@ public class HomepageSteps {
 	BasePage basePage;
 	HomePage homepage;
 	RewardsPage rewardsPage;
-	
-	public HomepageSteps(TestContext context) {
+	FileReader reader;
+	Properties propFile;
+	public HomepageSteps(TestContext context) throws IOException {
 		homepage = new HomePage(context.driver);
+//		reader=new FileReader("/src/test/java/Utils/runConfig.properties");
+		reader=new FileReader(System.getProperty("user.dir")+"/src/test/java/Utils/runConfig.properties");
+		propFile=new Properties();  
+	    propFile.load(reader);  
 	}
 	
 	
@@ -71,7 +78,9 @@ public class HomepageSteps {
 	@When("Complete Login Process with {string}")
 	public void completeValidLoginProcess(String mobileNumber){
 		homepage.click(homepage.permission);
-//		homepage.click(homepage.playProtectAccept);
+		if (propFile.getProperty("testExecutionPlatform").equals("browserstack")){
+			homepage.click(homepage.playProtectAccept);			
+		}
 		homepage.click(homepage.startButton);
 		homepage.click(homepage.allowButton);
 		homepage.click(homepage.permission);
