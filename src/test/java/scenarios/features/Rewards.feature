@@ -14,13 +14,13 @@ Feature: Rewards Page
 	And Click on Rewards button
 	Then Users should be able to see the pop-up screen with CTA
 	
-  @positive	@C14395
-  Scenario: Verify the UI of rewards active page
-  When Complete Login Process with "8788537892"
-  And Click on Rewards button
-  Then Verify Rewards logo with Savings account CTA
-  And Verify Total Jewels CTA
-  And Verify My earnings CTA
+	@positive	@C14395
+	Scenario: Verify the UI of rewards active page
+	When Complete Login Process with "8788537892"
+	And Click on Rewards button
+	Then Verify Rewards logo with Savings account CTA
+	And Verify Total Jewels CTA
+	And Verify My earnings CTA
  	And Verify Redeem CTA
  	And Verify 1J=₹1 with Know more CTA
  	
@@ -28,31 +28,31 @@ Feature: Rewards Page
  	@positive @C16227 @works-fine
  	Scenario: Verify that user can scroll down/up the page and can refresh the rewards page
  	When Complete Login Process with "8788537892"
-  And Click on Rewards button
-  Then User should be able to scroll down and up on rewards page
+	And Click on Rewards button
+	Then User should be able to scroll down and up on rewards page
  	And User can refresh the rewards page
  	
  	@positive @C14396 
  	Scenario: Verify all the displayed CTA on rewards page is navigating to respective page
  	When Complete Login Process with "8788537892"
-  And Click on Rewards button
-  Then Click on My earnings navigates to my earnings page
-  And Click on Redeem Jewels navigates to redemption screen
-  And Click on Know more navigates to CVP screen
+	And Click on Rewards button
+	Then Click on My earnings navigates to my earnings page
+	And Click on Redeem Jewels navigates to redemption screen
+	And Click on Know more navigates to CVP screen
   
 	@positive @C15960
 	Scenario: Verify the UI of CVP screens
 	When Complete Login Process with "8788537892"
-  And Click on Rewards button
-  And Click on the What are jewels CTA
+	And Click on Rewards button
+	And Click on the What are jewels CTA
   
-  @positive @C15121
+  	@positive @C15121
 	Scenario: Verify the FAQ icon on my earnings page
 	When Complete Login Process with "8788537892"
-  And Click on Rewards button
-  And Click on My earnings button and navigate to my earnings page
-  Then Click on the FAQ icon should navigate to the FAQ screen
-  And Tap on the chevron icon faq should be expanded or collapsed state
+	And Click on Rewards button
+	And Click on My earnings button and navigate to my earnings page
+	Then Click on the FAQ icon should navigate to the FAQ screen
+	And Tap on the chevron icon faq should be expanded or collapsed state
 	
 	@positive @C15961
 	Scenario: Verify the behavior of jewels to cash
