@@ -4,7 +4,7 @@ Feature: Rewards Page
   @positive @C14393
 	Scenario: Verify the UI of rewards inactive state page
 	When Complete Login Process with "8747012222"
-	And Click on Rewards button
+	And Click on Rewards button for inactive state page
 	Then If user tap on know more cta it should navigate to rewards CVP screen
 	And If user tap on Finish account setup cta, it should navigate to deposit screen page
 	
@@ -25,7 +25,7 @@ Feature: Rewards Page
  	And Verify 1J=₹1 with Know more CTA
  	
  	
- 	@positive @C16227 @works-fine
+ 	@positive @C16227 
  	Scenario: Verify that user can scroll down/up the page and can refresh the rewards page
  	When Complete Login Process with "8788537892"
 	And Click on Rewards button
@@ -46,7 +46,7 @@ Feature: Rewards Page
 	And Click on Rewards button
 	And Click on the What are jewels CTA
   
-  	@positive @C15121
+	@positive @C15121
 	Scenario: Verify the FAQ icon on my earnings page
 	When Complete Login Process with "8788537892"
 	And Click on Rewards button
