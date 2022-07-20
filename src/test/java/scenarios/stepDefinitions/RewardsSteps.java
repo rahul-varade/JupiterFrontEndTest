@@ -23,8 +23,15 @@ public class RewardsSteps {
 			homepage = new HomePage(context.driver);
 		}
 		
-		@And("Click on Rewards button")
+		@And("Click on Rewards button for inactive state page")
 		public void clickOnRewardsButton() {	
+			homepage.click(homepage.rewardsButtonInactiveState);
+			Assert.assertEquals(homepage.getText(homepage.rewardsText), "Rewards");
+		}
+		
+		
+		@And("Click on Rewards button")
+		public void clickOnRewardsButtonForInactiveState() {	
 			homepage.click(homepage.rewardsButton);
 			Assert.assertEquals(homepage.getText(homepage.rewardsText), "Rewards");
 		}
@@ -119,15 +126,22 @@ public class RewardsSteps {
 		 
 		 @And("Tap on the chevron icon faq should be expanded or collapsed state")
 		 public void tapOnChevronIcon() {
-			 rewardsPage.click(rewardsPage.FAQchevronButton);
-			 rewardsPage.click(rewardsPage.FAQchevronButton);
-			 rewardsPage.click(rewardsPage.FAQchevronButton);
+			 rewardsPage.click(rewardsPage.FAQchevronButtonOne);
+			 rewardsPage.click(rewardsPage.FAQchevronButtonTwo);
+			 rewardsPage.click(rewardsPage.FAQchevronButtonTwo);
+			 rewardsPage.click(rewardsPage.FAQchevronButtonThree);
+			 rewardsPage.click(rewardsPage.FAQchevronButtonThree);
+			 rewardsPage.click(rewardsPage.FAQchevronButtonFour);
+			 rewardsPage.click(rewardsPage.FAQchevronButtonFour);
+			 rewardsPage.click(rewardsPage.FAQchevronButtonFive);
+			 rewardsPage.click(rewardsPage.FAQchevronButtonFive);
 		 }
 		 
 		 @Then("If user tap on know more cta it should navigate to rewards CVP screen")
 		 public void clickOnKnowMoreCTAZeroState() {
 			 rewardsPage.click(rewardsPage.zeroState_MoreAboutRewards);
-			 Assert.assertEquals(rewardsPage.getText(rewardsPage.cvpTwoText), "Earn 1% on UPI spends above ₹ 100");
+//			 Assert.assertEquals(rewardsPage.getText(rewardsPage.cvpTwoText), "Earn 1% on UPI spends above ₹ 100");
+			 rewardsPage.goBack();
 		 }
 		 @And("If user tap on Finish account setup cta, it should navigate to deposit screen page")
 		 public void tapOnFinishAccountSetupCTA() {
@@ -136,8 +150,7 @@ public class RewardsSteps {
 		 }
 		 @Then("Users should be able to see the pop-up screen with CTA")
 		 public void seePopUpScreenWithCTA() throws InterruptedException {
-			 Thread.sleep(5000);
-			 rewardsPage.showPageSource();
+			 Thread.sleep(3000);
 		 }
 		 @And("Click on Redeem Jewels")
 			public void clickOnRedeemJewelsIcon(){
