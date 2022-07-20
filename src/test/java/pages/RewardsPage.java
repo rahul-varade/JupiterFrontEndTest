@@ -24,11 +24,14 @@ public class RewardsPage extends BasePage {
 	public final By cvpFourText = By.xpath("//android.widget.TextView[contains(@text,\"Convert your Jewels to Digital Gold\")]");
 	public final By cvpCloseButton = By.xpath("//android.widget.TextView[@text=\"\"]");
 	public final By myEarnings_FAQsLink= By.xpath("//android.widget.TextView[@text=\"FAQs\"]");
-	public final By FAQchevronButton = By.xpath("//android.widget.TextView[@text=\"\"]");
+	public final By FAQchevronButtonOne = By.xpath("//*[contains(@text,\"some of my transactions\")]");
+	public final By FAQchevronButtonTwo = By.xpath("//*[contains(@text,\"UPI transactions\")]");
+	public final By FAQchevronButtonThree = By.xpath("//*[contains(@text,\"Debit Card transactions\")]");
+	public final By FAQchevronButtonFour = By.xpath("//*[contains(@text,\"How can I redeem\")]");
+	public final By FAQchevronButtonFive= By.xpath("//*[contains(@text,\"are some of my Jewels\")]");
 	public final By zeroState_MoreAboutRewards = By.xpath("//android.widget.TextView[@text=\"More about Rewards\"]");
 	public final By zeroState_FinishAccountSetupToUnlock = By.xpath("//android.widget.TextView[@text=\"Finish account setup to unlock\"]");
 	public final By dragElement_aa = By.xpath("//android.widget.TextView[@text=\"100Ĵ\"]/.."); 
-//	/android.widget.ScrollView/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup[2]/android.view.ViewGroup
 	public final By dropElement_aa = By.xpath("//android.view.ViewGroup[4]/android.view.ViewGroup/android.view.ViewGroup/android.view.ViewGroup[2]/android.view.ViewGroup");
 	public final By letsGoButton = By.xpath("//*[contains(@text, \"Let’s go\")]");
 	public final By redemptionPage_TandC = By.xpath("//android.widget.TextView[@text=\"Terms & Conditions\"]");
