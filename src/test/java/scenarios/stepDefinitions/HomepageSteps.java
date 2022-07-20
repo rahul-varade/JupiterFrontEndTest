@@ -112,7 +112,6 @@ public class HomepageSteps {
 	
 	@And("Tap on Total account balance navigates to Networth page")
 	public void tapOnTotalAccountBalance() {
-		homepage.showPageSource();
 		homepage.click(homepage.checkAllYourBalances);
 		String test_name = homepage.getText(homepage.seeBankBalanceText);
 		Assert.assertTrue(test_name.contains("your bank balances"));
@@ -122,7 +121,6 @@ public class HomepageSteps {
 	
 	@And("Tap on Deposit money CTA navigates to deposit screen")
 	public void tapOnDepositMoneyCTA() {	
-	//add logic to deny 
 		homepage.click(homepage.depositMoneyCTA);
 		homepage.click(homepage.permission);
 		homepage.click(homepage.permission);
@@ -148,7 +146,7 @@ public class HomepageSteps {
 	@And("Tap on Transfers navigates to Payments page")
 	public void tapOnTransfers() {	
 		homepage.click(homepage.transfersTabButton);
-		homepage.click(homepage.permission);
+//		homepage.click(homepage.permission);
 		Assert.assertEquals(homepage.getText(homepage.transfersText), "Transfers");
 		homepage.goBack();	
 	}
@@ -241,7 +239,9 @@ public class HomepageSteps {
 	
 	@And("User Should See Rewards Icon on Home Page")
 	public void userShouldSeeRewardsIconOnHomePage() {
-		Assert.assertTrue(homepage.isElementVisible(homepage.rewardsButton));
+//		Assert.assertTrue(homepage.isElementVisible(homepage.rewardsButton));
+		Assert.assertTrue(homepage.isElementVisible(homepage.rewardsButtonZeroState));
+		
 	}
 	
 	@And("User Should See Settings icon on top left corner for zero state")
@@ -306,5 +306,40 @@ public class HomepageSteps {
 		homepage.click(homepage.continueButton);
 		Assert.assertTrue(homepage.isElementVisible(homepage.home_tab_button));
 	}	
+	
+	@Then("Click on Debit Card Icon Navigates to Cards Page")
+	public void click_on_debit_card_icon_navigates_to_cards_page() {
+		homepage.click(homepage.debitCardIcon);
+		Assert.assertEquals(homepage.getText(homepage.debitCardText), "Debit Card");
+		homepage.goBack();
+	}
+		
+	@And("Click on Save Icon Navigates to Pots Page")
+	public void click_on_save_icon_navigates_to_pots_page() {
+		homepage.click(homepage.saveIcon);
+		Assert.assertEquals(homepage.getText(homepage.createAPotCTA), "Create a Pot");
+		homepage.goBack();
+		homepage.goBack();
+	}
+	
+	@And("Click on Portfolio Icon Navigates to Portfolio Page")
+	public void click_on_portfolio_icon_navigates_to_portfolio_page() {
+		homepage.click(homepage.portfolioIcon);
+		Assert.assertEquals(homepage.getText(homepage.portfolio_pageTitle), "Check your email!");
+		homepage.goBack();
+	}
+	
+	@And("Click on Refer Icon Navigates to Refer Page")
+	public void click_on_refer_icon_navigates_to_refer_page() {
+		homepage.click(homepage.referAndEarnIcon);
+		homepage.longSwipeScreen(Direction.UP);
+		homepage.click(homepage.referAndEarn_FAQs);
+		homepage.shortSwipeScreen(Direction.UP);
+		homepage.shortSwipeScreen(Direction.UP);
+		homepage.shortSwipeScreen(Direction.UP);
+		homepage.goBack();
+		homepage.goBack();
+		Assert.assertTrue(homepage.isElementVisible(homepage.home_tab_button));
+	}
 	
 }
