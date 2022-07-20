@@ -27,6 +27,8 @@ public class HomePage extends BasePage {
 	public final By hamburgerMenu = By.xpath("//*[@resource-id=\"greeting\"]//parent::*//android.widget.Button");
 	public final By hamburgerMenuZeroState = By.xpath("//android.view.ViewGroup[2]/android.view.ViewGroup[1]/android.view.ViewGroup");
 	public final By rewardsButton = By.xpath("//android.view.View[@resource-id=\"rewards-home\"]");
+	public final By rewardsButtonInactiveState = By.xpath("//android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup");
+	public final By rewardsButtonZeroState = By.xpath("//android.view.ViewGroup[2]/android.view.ViewGroup[4]/android.view.ViewGroup");
 	public final By checkAllYourBalances = By.xpath("//*[@resource-id=\"networth-container\"]//android.widget.Image");
 	public final By depositMoneyCTA = By.xpath("//*[@resource-id=\"add-money-button\"]//android.widget.Button");
 	public final By vkycButton = By.xpath("//*[@resource-id=\"pro-cta\"]");
@@ -40,8 +42,9 @@ public class HomePage extends BasePage {
 	public final By TakeATourOfJupiterCTA = By.xpath("//*[contains(@text,\"Take a tour of Jupiter\")]");
 	public final By portfolio_startTrackingButton = By.xpath("//*[contains(@text,\"Start tracking\")]");
 	public final By referAndEarn_ReferViaWhatsapp = By.xpath("//*[contains(@text,\"Refer via WhatsApp\")]");
-	
-	
+	public final By referAndEarn_FAQs = By.xpath("//*[contains(@text,\"FAQ\")]");
+	public final By createAPotCTA = By.xpath("//*[contains(@text,\"Create a Pot\")]");
+	public final By portfolio_pageTitle = By.xpath("//*[contains(@text,\"Check your email\")]");
 	// think about the placement of next locators
 	public final By settingsText = By.xpath("//android.widget.TextView[@text=\"Settings\"]");
 	public final By rewardsText = By.xpath("//android.widget.TextView[@text=\"Rewards\"]");
