@@ -1,20 +1,6 @@
 Feature: Jupiter Application
-  I want to use this template for my feature file
+  This featuer file is to test Jupiter Homepage.
 
-  @positive
-  Scenario: Launch Home Page
-  And Deny Permission
-	And Click Start
-	And Click Allow
-	And Deny Permission
-	And Deny Permission
-	And Deny Permission
-	When Enter Mobile Number
-	And Click Verify
-	And Click Continue Button
-	Then Click Alright
-	And Click Continue
-	
 	@positive @C15111
 	Scenario: Verify UI of design home page
 	When Complete Login Process with "8788537892"
