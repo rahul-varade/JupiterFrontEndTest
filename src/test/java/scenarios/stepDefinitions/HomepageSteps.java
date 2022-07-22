@@ -88,10 +88,10 @@ public class HomepageSteps {
 		homepage.click(homepage.permission);
 		homepage.enterNumber(homepage.enterMobileNumber, mobileNumber);
 		homepage.click(homepage.verifyButton);
-		homepage.waitForVisibility(homepage.continueButton);
 		homepage.click(homepage.continueButton);
-		homepage.click(homepage.alrightButton);
 		homepage.click(homepage.continueButton);
+		homepage.click(homepage.continueButton);
+//		homepage.click(homepage.alrightButton);
 		Assert.assertTrue(homepage.isElementVisible(homepage.home_tab_button));
 	}	
 	
