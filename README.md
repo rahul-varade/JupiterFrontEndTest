@@ -4,11 +4,11 @@
 
 #### Table of Contents
 
-  *About the Project
-  *BuiltWith
-  *Getting Started
-  *Pre-requisites
-  *Installation guide
+  * About the Project
+  * BuiltWith
+  * Getting Started
+  * Pre-requisites
+  * Installation guide
 
 
 #### About the Project
