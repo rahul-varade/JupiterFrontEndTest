@@ -1,6 +1,10 @@
 package scenarios.stepDefinitions;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
+
+import logger.LoggerHelper;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
@@ -16,11 +20,13 @@ public class HelpPageSteps {
 	BasePage basePage;
 	HelpPage helpcenter;
 	HomePage homepage;
+	public static Logger log;
+
 	
-	public HelpPageSteps(TestContext context){
+	public HelpPageSteps(TestContext context) throws FileNotFoundException {
 		helpcenter = new HelpPage(context.driver);
 		homepage = new HomePage(context.driver);
-
+		log = LoggerHelper.getLogger(LoggerHelper.class);
 	}
 	
 	@And("Click on HelpCenter page")

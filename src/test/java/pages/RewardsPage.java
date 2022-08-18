@@ -3,9 +3,11 @@ package pages;
 import org.openqa.selenium.By;
 import io.appium.java_client.AppiumDriver;
 
+import java.io.FileNotFoundException;
+
 public class RewardsPage extends BasePage {
 
-	public RewardsPage(AppiumDriver driver) {
+	public RewardsPage(AppiumDriver driver) throws FileNotFoundException {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}

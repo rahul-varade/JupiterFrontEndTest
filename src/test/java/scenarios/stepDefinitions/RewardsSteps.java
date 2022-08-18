@@ -1,7 +1,10 @@
 package scenarios.stepDefinitions;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import logger.LoggerHelper;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import context.TestContext;
@@ -17,10 +20,11 @@ public class RewardsSteps {
 	BasePage basePage;
 	RewardsPage rewardsPage;
 	HomePage homepage;
-		
-		public RewardsSteps(TestContext context) {
+	public static Logger log;
+		public RewardsSteps(TestContext context) throws FileNotFoundException {
 			rewardsPage = new RewardsPage(context.driver);
 			homepage = new HomePage(context.driver);
+			log = LoggerHelper.getLogger(LoggerHelper.class);
 		}
 		
 		@And("Click on Rewards button for inactive state page")

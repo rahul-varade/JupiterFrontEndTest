@@ -4,6 +4,8 @@ import org.openqa.selenium.By;
 
 import io.appium.java_client.AppiumDriver;
 
+import java.io.FileNotFoundException;
+
 public class HomePage extends BasePage {
 	
 	public final By startButton = By.xpath("//android.widget.TextView[@text=\"Start\"]");
@@ -73,7 +75,7 @@ public class HomePage extends BasePage {
 	
 	
 	
-	public HomePage(AppiumDriver driver) {
+	public HomePage(AppiumDriver driver) throws FileNotFoundException {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}

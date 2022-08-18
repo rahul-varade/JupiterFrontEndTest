@@ -1,8 +1,12 @@
 package scenarios.stepDefinitions;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
+
+import logger.LoggerHelper;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import context.TestContext;
 import io.cucumber.java.en.Then;
@@ -22,12 +26,15 @@ public class HomepageSteps {
 	RewardsPage rewardsPage;
 	FileReader reader;
 	Properties propFile;
-	public HomepageSteps(TestContext context) throws IOException {
+	public static Logger log;
+	public HomepageSteps(TestContext context) throws IOException, FileNotFoundException {
 		homepage = new HomePage(context.driver);
+		basePage = new BasePage(context.driver);
 //		reader=new FileReader("/src/test/java/Utils/runConfig.properties");
 		reader=new FileReader(System.getProperty("user.dir")+"/src/test/java/Utils/runConfig.properties");
 		propFile=new Properties();  
-	    propFile.load(reader);  
+	    propFile.load(reader);
+		log = LoggerHelper.getLogger(LoggerHelper.class);
 	}
 	
 	
@@ -77,30 +84,31 @@ public class HomepageSteps {
 	
 	@When("Complete Login Process with {string}")
 	public void completeValidLoginProcess(String mobileNumber){
-		homepage.click(homepage.permission);
-		if (propFile.getProperty("testExecutionPlatform").equals("browserstack")){
-			homepage.click(homepage.playProtectAccept);			
-		}
-		homepage.click(homepage.startButton);
-		homepage.click(homepage.allowButton);
-		homepage.click(homepage.permission);
-		homepage.click(homepage.permission);
-		homepage.click(homepage.permission);
-		homepage.enterNumber(homepage.enterMobileNumber, mobileNumber);
-		homepage.click(homepage.verifyButton);
-		homepage.click(homepage.continueButton);
-		homepage.click(homepage.continueButton);
-		homepage.click(homepage.continueButton);
+			homepage.click(homepage.permission);
+			if (propFile.getProperty("testExecutionPlatform").equals("browserstack")){
+				homepage.click(homepage.playProtectAccept);
+			}
+			homepage.click(homepage.startButton);
+			homepage.click(homepage.allowButton);
+			homepage.click(homepage.permission);
+			homepage.click(homepage.permission);
+			homepage.click(homepage.permission);
+			homepage.enterNumber(homepage.enterMobileNumber, mobileNumber);
+			homepage.click(homepage.verifyButton);
+			homepage.click(homepage.continueButton);
+			homepage.click(homepage.continueButton);
+//			homepage.click(homepage.continueButton);
 //		homepage.click(homepage.alrightButton);
-		Assert.assertTrue(homepage.isElementVisible(homepage.home_tab_button));
-	}	
+			Assert.assertTrue(homepage.isElementVisible(homepage.home_tab_button));
+			log.info("Successfully logged in");
+
+	}
 	
-	@Then("Tap on Hamurger icon navigates to App settings screen")
+	@Then("Tap on Hamburger icon navigates to App settings screen")
 	public void tapOnHamburgerIcon(){
 		homepage.click(homepage.hamburgerMenu);
 		Assert.assertEquals(homepage.getText(homepage.settingsText), "Settings");
 		homepage.goBack();
-		
 	}
 	
 	@And("Tap on Rewards icon navigates to rewards home page")

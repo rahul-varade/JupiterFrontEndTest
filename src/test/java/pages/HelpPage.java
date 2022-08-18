@@ -2,10 +2,11 @@ package pages;
 
 import org.openqa.selenium.By;
 import io.appium.java_client.AppiumDriver;
+import java.io.FileNotFoundException;
 
 public class HelpPage extends BasePage {
 	
-	public HelpPage(AppiumDriver driver) {
+	public HelpPage(AppiumDriver driver) throws FileNotFoundException {
 		super(driver);
 		// TODO Auto-generated constructor stub
 	}
