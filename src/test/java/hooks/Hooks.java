@@ -8,8 +8,10 @@ import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import java.sql.Timestamp;  
-import java.time.Instant;  
+import java.time.Instant;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.BeforeClass;
 
@@ -34,7 +36,13 @@ public class Hooks {
 	}
 	
 	@After
-	public void tearDown() {
+	public void tearDown(Scenario scenario) {
+		if(scenario.isFailed()){
+			String screenshotName = scenario.getName().replaceAll(" ","_");
+			TakesScreenshot ts = (TakesScreenshot) driver;
+			byte[] screenshot = ts.getScreenshotAs(OutputType.BYTES);
+			scenario.attach(screenshot,"image/png",screenshotName);
+		}
 		driver.quit();
 	}
 	
@@ -75,7 +83,7 @@ public class Hooks {
 		}
 
 		
-		driver.manage().timeouts().implicitlyWait(7, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		context.driver = driver;
 	}
 }
