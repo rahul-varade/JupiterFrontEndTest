@@ -21,7 +21,7 @@ Feature: Jupiter Application
 	@positive @C15110 
 	Scenario:	 Check whether the displayed CTA home page design is navigating to the respective page
 	When Complete Login Process with "8788537892"
-	Then Tap on Hamurger icon navigates to App settings screen
+	Then Tap on Hamburger icon navigates to App settings screen
 	And Tap on Rewards icon navigates to rewards home page
 	And Tap on Total account balance navigates to Networth page
 	And Tap on Deposit money CTA navigates to deposit screen
