@@ -15,7 +15,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.springframework.util.Assert;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.touch.LongPressOptions;
 import io.appium.java_client.touch.WaitOptions;
@@ -24,6 +23,8 @@ import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.TouchAction;
 import logger.LoggerHelper;
+import org.testng.Assert;
+
 public class BasePage {
 	protected AppiumDriver driver;
 	protected WebDriverWait wait;
@@ -275,4 +276,9 @@ public class BasePage {
 			}
 		return arrayOfElements;
 		}
+
+	public boolean assertContains(By locator, String expected){
+		String actual = driver.findElement(locator).getText();
+		return actual.contains(expected);
+	}
 }

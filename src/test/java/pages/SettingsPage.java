@@ -73,9 +73,12 @@ public class SettingsPage extends BasePage {
 	public final By SettingsPageBackButton = By.xpath("//*[@content-desc=\"Navigate up\"]");
 	public final By LogoutButton = By.xpath("//*[@text=\"\uE940\"]");
 	public final By LogoutButtonOptionNoButton = By.xpath("//android.widget.Button[@text=\"NO\"]");
+	public final By LogoutButtonOptionYesButton = By.xpath("//android.widget.Button[@text=\"YES\"]");
+	public final By EnterMPINText = By.xpath("//*[contains(@text,'Enter MPIN')]");
 	public final By AccountTypesText = By.xpath("//android.widget.TextView[@text=\"Account types\"]");
 	public final By nameInitialsText = By.xpath("//*[contains(@text,'RV')]");
 	public final By FullNameText = By.xpath("//*[contains(@text,'Rahul Satish Varade')]");
+	public final By MaskedPanValue = By.xpath("//*[contains(@text,'A*****')]");
 	public final By AccountSinceText = By.xpath("//*[contains(@text,'Account since Oct 2021')]");
 	public final By AccountNumberLabel = By.xpath("//*[@text='Account number']");
 	public final By IFSCCodeLabel = By.xpath("//*[@text='IFSC Code']");
@@ -86,6 +89,7 @@ public class SettingsPage extends BasePage {
 	public final By CustomerIdText = By.xpath("//*[@text='Customer Id']");
 	public final By CustomerIdInDigits = By.xpath("//*[@text='135208282']");
 	public final By AlternateIFSCLabel = By.xpath("//*[@text='Alternate IFSC']");
+	public final By AccountDetailsIFSCLabel = By.xpath("//*[@text='IFSC']");
 	public final By AlternateIFSCInText = By.xpath("//*[@text='FDRL0000001']");
 	public final By JupiterAccountStatementText = By.xpath("//*[@text='Jupiter account statement']");
 	public final By InterestCertificateText = By.xpath("//*[@text='Interest Certificate']");
@@ -101,10 +105,34 @@ public class SettingsPage extends BasePage {
 	public final By MaskedPanLabel = By.xpath("//*[@text='Masked Pan']");
 	public final By CommunicationAddressLabel = By.xpath("//*[@text='COMMUNICATION ADDRESS']");
 	public final By PermanentAddressLabel = By.xpath("//*[@text='PERMANENT ADDRESS']");
+	public final By InterestCertificateButton = By.xpath("//*[@text='Interest Certificate']");
+	public final By YourInterestCertificateText = By.xpath("//*[@text='Your Interest Certificate']");
+	public final By FinancialYearDropdown = By.xpath("//*[@text='Financial year']");
 
-
-
-
+	public final By SelectInterestCertificatePeriod = By.xpath("//*[contains(@text,'FY 202')]");
+	public final By GenerateInterestCertificateButton = By.xpath("//*[@text='Generate Interest certificate']");
+	public final By InterestCertificateSuccessMessage = By.xpath("//*[contains(@text,'Interest certificate will be in your inbox within')]");
+	public final By SelectPeriodDropdown = By.xpath("//*[contains(@text,'Select Period')]");
+	public final By SelectMonth = By.xpath("//*[contains(@text,'Aug')]");
+	public final By GetStatementButton= By.xpath("//*[contains(@text,'Get statement')]");
+	public final By JupiterStatementSuccessMessage = By.xpath("//*[contains(@text,'will be in your inbox within')]");
+	public final By ShareAccountDetailsButton = By.xpath("//*[@text=\"\uE93B\"]");
+	public final By CallSupport = By.xpath("//*[contains(@text,'8066665555')]");
+	public final By ChatWithUsButton = By.xpath("//*[contains(@text,'Chat')]");
+	public final By CallFederalBankButton = By.xpath("//*[contains(@text,'1800')]");
+	public final By CancelButton = By.xpath("//*[contains(@text,'Cancel')]");
+	public final By CopyCustomerIDButton = By.xpath("(//*[@text=\"Customer Id\"]//following-sibling::android.widget.TextView)[2]");
+	public final By CopyAccountNumberIDButton = By.xpath("(//*[@text=\"Account Number\"]//following-sibling::android.widget.TextView)[2]");
+	public final By CopyIFSCButton = By.xpath("(//*[@text=\"IFSC\"]//following-sibling::android.widget.TextView)[2]");
+	public final By CopyAlternateIFSCButton = By.xpath("(//*[@text=\"Alternate IFSC\"]//following-sibling::android.widget.TextView)[2]");
+	public final By CopiedMessage = By.xpath("//*[contains(@text,'copied')]");
+	public final By communicationAddress = By.xpath("//*[@text=\"COMMUNICATION ADDRESS\"]/parent::android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView");
+	public final By permanentAddress = By.xpath("//*[@text=\"PERMANENT ADDRESS\"]/parent::android.view.ViewGroup/android.view.ViewGroup/android.widget.TextView");
+	public final By JupiterBankChargesURL = By.xpath("//*[contains(@text,'jupiter-service-charges.html')]");
+	public final By JupiterTAndCURL = By.xpath("//*[contains(@text,'jupiter-terms-and-conditions.html')]");
+	public final By JupiterPrivacyPolicy = By.xpath("//*[contains(@text,'jupiter-privacy-policy.html')]");
+	public final By AboutUsURL = By.xpath("//*[contains(@text,'Team | Jupiter')]");
+	public final By AccountDetailsPageTitle = By.xpath("//*[@text='Your Savings account']");
 	public SettingsPage(AppiumDriver driver) throws FileNotFoundException {
 		super(driver);
 		// TODO Auto-generated constructor stub

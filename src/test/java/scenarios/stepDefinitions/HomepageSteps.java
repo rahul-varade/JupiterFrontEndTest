@@ -97,8 +97,8 @@ public class HomepageSteps {
 			homepage.click(homepage.verifyButton);
 			homepage.click(homepage.continueButton);
 			homepage.click(homepage.continueButton);
-//			homepage.click(homepage.continueButton);
-//		homepage.click(homepage.alrightButton);
+			homepage.click(homepage.continueButton);
+	//		homepage.click(homepage.alrightButton);
 			Assert.assertTrue(homepage.isElementVisible(homepage.home_tab_button));
 			log.info("Successfully logged in");
 
